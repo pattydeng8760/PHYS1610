@@ -1,0 +1,274 @@
+commit 943659699645e3b60efe4a96890911113703f7e8
+Author: Patrick GC Deng <patrickgc.deng@mail.utoronto.ca>
+Date:   Wed Mar 5 16:45:51 2025 -0500
+
+   added Readme
+
+ html/index.html  |  12 ++++++------
+ latex/index.tex  |   6 +++---
+ latex/refman.aux |  12 ++++++------
+ latex/refman.log |  10 +++++-----
+ latex/refman.out |   6 +++---
+ latex/refman.pdf | Bin 164322 -> 164329 bytes
+ latex/refman.toc |   6 +++---
+ 7 files changed, 26 insertions(+), 26 deletions(-)
+
+commit f173acf848bc775db7c0191db530da8e5d97b179
+Author: Patrick GC Deng <patrickgc.deng@mail.utoronto.ca>
+Date:   Wed Mar 5 16:43:58 2025 -0500
+
+   Make doxygen documentation
+   added switch case to the main function Compute_PDE to take in the user requested solver style
+   can be full, full-blas, or banded-blas for the matrix multiplcation type
+
+ Compute_PDE.cpp                          |   70 +-
+ Compute_PDE.o                            |  Bin 207472 -> 258488 bytes
+ Doxyfile                                 | 2736 ++++++++++++++++++++++++++++++
+ Makefile                                 |   27 +-
+ README.md                                |   72 +
+ diffusion_matrix.cpp                     |   18 +-
+ diffusion_matrix.o                       |  Bin 160448 -> 160448 bytes
+ diffusion_solver                         |  Bin 489216 -> 525504 bytes
+ html/Compute__PDE_8cpp.html              |  142 ++
+ html/annotated.html                      |   86 +
+ html/bc_s.png                            |  Bin 0 -> 676 bytes
+ html/bc_sd.png                           |  Bin 0 -> 635 bytes
+ html/bdwn.png                            |  Bin 0 -> 147 bytes
+ html/boundary__condition_8h.html         |  187 ++
+ html/boundary__condition_8h_source.html  |   96 ++
+ html/classes.html                        |   87 +
+ html/closed.png                          |  Bin 0 -> 132 bytes
+ html/diffusion__matrix_8cpp.html         |  194 +++
+ html/diffusion__matrix_8h.html           |  213 +++
+ html/diffusion__matrix_8h_source.html    |   94 +
+ html/doc.png                             |  Bin 0 -> 746 bytes
+ html/docd.png                            |  Bin 0 -> 756 bytes
+ html/doxygen.css                         | 2007 ++++++++++++++++++++++
+ html/doxygen.svg                         |   26 +
+ html/dynsections.js                      |  123 ++
+ html/files.html                          |   92 +
+ html/folderclosed.png                    |  Bin 0 -> 616 bytes
+ html/folderopen.png                      |  Bin 0 -> 597 bytes
+ html/functions.html                      |   87 +
+ html/functions_vars.html                 |   87 +
+ html/globals.html                        |   94 +
+ html/globals_enum.html                   |   81 +
+ html/globals_func.html                   |   93 +
+ html/index.html                          |  160 ++
+ html/init_8cpp.html                      |  249 +++
+ html/init_8h.html                        |  288 ++++
+ html/init_8h_source.html                 |  127 ++
+ html/jquery.js                           |   34 +
+ html/matrix__calc_8h.html                |  313 ++++
+ html/matrix__calc_8h_source.html         |  105 ++
+ html/md_README.html                      |   82 +
+ html/menu.js                             |  136 ++
+ html/menudata.js                         |   38 +
+ html/nav_f.png                           |  Bin 0 -> 153 bytes
+ html/nav_fd.png                          |  Bin 0 -> 169 bytes
+ html/nav_g.png                           |  Bin 0 -> 95 bytes
+ html/nav_h.png                           |  Bin 0 -> 98 bytes
+ html/nav_hd.png                          |  Bin 0 -> 114 bytes
+ html/open.png                            |  Bin 0 -> 123 bytes
+ html/pages.html                          |   86 +
+ html/search/all_0.js                     |    5 +
+ html/search/all_1.js                     |    7 +
+ html/search/all_2.js                     |    6 +
+ html/search/all_3.js                     |    8 +
+ html/search/all_4.js                     |    4 +
+ html/search/all_5.js                     |    4 +
+ html/search/all_6.js                     |    5 +
+ html/search/all_7.js                     |    4 +
+ html/search/all_8.js                     |    5 +
+ html/search/all_9.js                     |    4 +
+ html/search/all_a.js                     |    5 +
+ html/search/all_b.js                     |    8 +
+ html/search/all_c.js                     |    4 +
+ html/search/all_d.js                     |    4 +
+ html/search/classes_0.js                 |    4 +
+ html/search/close.svg                    |   31 +
+ html/search/enums_0.js                   |    4 +
+ html/search/files_0.js                   |    4 +
+ html/search/files_1.js                   |    4 +
+ html/search/files_2.js                   |    5 +
+ html/search/files_3.js                   |    5 +
+ html/search/files_4.js                   |    4 +
+ html/search/functions_0.js               |    6 +
+ html/search/functions_1.js               |    5 +
+ html/search/functions_2.js               |    5 +
+ html/search/functions_3.js               |    4 +
+ html/search/functions_4.js               |    4 +
+ html/search/functions_5.js               |    4 +
+ html/search/functions_6.js               |    4 +
+ html/search/functions_7.js               |    5 +
+ html/search/mag.svg                      |   37 +
+ html/search/mag_d.svg                    |   37 +
+ html/search/mag_sel.svg                  |   74 +
+ html/search/mag_seld.svg                 |   74 +
+ html/search/pages_0.js                   |    4 +
+ html/search/search.css                   |  291 ++++
+ html/search/search.js                    |  816 +++++++++
+ html/search/searchdata.js                |   33 +
+ html/search/variables_0.js               |    4 +
+ html/search/variables_1.js               |    4 +
+ html/search/variables_2.js               |    4 +
+ html/search/variables_3.js               |    4 +
+ html/search/variables_4.js               |    4 +
+ html/search/variables_5.js               |    4 +
+ html/search/variables_6.js               |    4 +
+ html/splitbar.png                        |  Bin 0 -> 314 bytes
+ html/splitbard.png                       |  Bin 0 -> 282 bytes
+ html/structSimulationParams-members.html |   91 +
+ html/structSimulationParams.html         |  127 ++
+ html/sync_off.png                        |  Bin 0 -> 853 bytes
+ html/sync_on.png                         |  Bin 0 -> 845 bytes
+ html/tab_a.png                           |  Bin 0 -> 142 bytes
+ html/tab_ad.png                          |  Bin 0 -> 135 bytes
+ html/tab_b.png                           |  Bin 0 -> 169 bytes
+ html/tab_bd.png                          |  Bin 0 -> 173 bytes
+ html/tab_h.png                           |  Bin 0 -> 177 bytes
+ html/tab_hd.png                          |  Bin 0 -> 180 bytes
+ html/tab_s.png                           |  Bin 0 -> 184 bytes
+ html/tab_sd.png                          |  Bin 0 -> 188 bytes
+ html/tabs.css                            |    1 +
+ init.cpp                                 |  105 +-
+ init.h                                   |   26 +-
+ init.o                                   |  Bin 144400 -> 162600 bytes
+ latex/Compute__PDE_8cpp.tex              |   54 +
+ latex/Makefile                           |   27 +
+ latex/annotated.tex                      |    4 +
+ latex/boundary__condition_8h.tex         |   67 +
+ latex/boundary__condition_8h_source.tex  |   18 +
+ latex/diffusion__matrix_8cpp.tex         |   73 +
+ latex/diffusion__matrix_8h.tex           |   96 ++
+ latex/diffusion__matrix_8h_source.tex    |   16 +
+ latex/doxygen.sty                        |  603 +++++++
+ latex/files.tex                          |   10 +
+ latex/index.tex                          |   79 +
+ latex/init_8cpp.tex                      |  121 ++
+ latex/init_8h.tex                        |  158 ++
+ latex/init_8h_source.tex                 |   38 +
+ latex/longtable_doxygen.sty              |  448 +++++
+ latex/matrix__calc_8h.tex                |  115 ++
+ latex/matrix__calc_8h_source.tex         |   25 +
+ latex/md_README.tex                      |    0
+ latex/refman.aux                         |  214 +++
+ latex/refman.idx                         |   46 +
+ latex/refman.ilg                         |    6 +
+ latex/refman.ind                         |   87 +
+ latex/refman.log                         | 1296 ++++++++++++++
+ latex/refman.out                         |   61 +
+ latex/refman.pdf                         |  Bin 0 -> 164322 bytes
+ latex/refman.tex                         |  208 +++
+ latex/refman.toc                         |   62 +
+ latex/structSimulationParams.tex         |   44 +
+ latex/tabu_doxygen.sty                   | 2557 ++++++++++++++++++++++++++++
+ pde_solver                               |  Bin 0 -> 525496 bytes
+ 143 files changed, 16725 insertions(+), 53 deletions(-)
+
+commit ca333110038de58d611bfbc78e19d430c726ec25
+Author: Patrick GC Deng <patrickgc.deng@mail.utoronto.ca>
+Date:   Wed Mar 5 14:04:36 2025 -0500
+
+    Corrected print statement, corrected banded matrix to enforce dirichlet boudnary condition
+
+ Compute_PDE.cpp      |  37 +++++++++++++++++++++----------------
+ Compute_PDE.o        | Bin 201832 -> 207472 bytes
+ diffusion_matrix.cpp |  34 ++++++++++++++++++++++++++++++++--
+ diffusion_matrix.h   |   7 +++++++
+ diffusion_matrix.o   | Bin 55232 -> 160448 bytes
+ diffusion_solver     | Bin 413624 -> 489216 bytes
+ matrix_calc.cpp      |  27 +++++++++++++++++++++++++--
+ matrix_calc.h        |  16 ++++++++++++++++
+ matrix_calc.o        | Bin 141584 -> 155944 bytes
+ 9 files changed, 101 insertions(+), 20 deletions(-)
+
+commit 9e88408eec985c2d97f9b6a365b14271effce881
+Author: Patrick GC Deng <patrickgc.deng@mail.utoronto.ca>
+Date:   Tue Mar 4 15:36:34 2025 -0500
+
+    Included function in matrix_calc.cpp for BLAS dgemv and daxpy for matrix-vector multiplications
+
+ Compute_PDE.cpp    |  18 +++++++-----------
+ Compute_PDE.o      | Bin 201784 -> 201832 bytes
+ Makefile           |   9 ++++++---
+ diffusion_matrix.h |   4 ++--
+ diffusion_solver   | Bin 367080 -> 413624 bytes
+ matrix_calc.cpp    |  41 +++++++++++++++++++----------------------
+ matrix_calc.h      |  15 ++++++++++++---
+ matrix_calc.o      | Bin 51888 -> 141584 bytes
+ 8 files changed, 46 insertions(+), 41 deletions(-)
+
+commit 713d791728115c776b312110861904b27c188a89
+Author: Patrick GC Deng <patrickgc.deng@mail.utoronto.ca>
+Date:   Mon Mar 3 20:40:07 2025 -0500
+
+    Added doxygen style comments to header files
+    Fixed bugs.
+    Added textcase to Makefile
+
+ Compute_PDE.cpp  |   7 +------
+ Compute_PDE.o    | Bin 204096 -> 201784 bytes
+ diffusion_solver | Bin 368144 -> 367080 bytes
+ matrix_calc.cpp  |  33 +++++++++++++++++++++++++--------
+ matrix_calc.h    |   2 +-
+ matrix_calc.o    | Bin 51200 -> 51888 bytes
+ 6 files changed, 27 insertions(+), 15 deletions(-)
+
+commit 7d13c6e64fc906379ab2f24507162184a8ea89d1
+Author: Patrick GC Deng <patrickgc.deng@mail.utoronto.ca>
+Date:   Mon Mar 3 20:27:04 2025 -0500
+
+    added function inside matrix_calc.cpp for both explicit matrix multiplication and matrix multiplication using BLAS
+
+ Compute_PDE.cpp |  4 ++--
+ matrix_calc.cpp | 12 +++++++++++-
+ 2 files changed, 13 insertions(+), 3 deletions(-)
+
+commit 37338fef0158c6c1eedef49ae9972046e97dcb76
+Author: Patrick GC Deng <patrickgc.deng@mail.utoronto.ca>
+Date:   Mon Mar 3 20:12:36 2025 -0500
+
+    Modularized Code
+    Split to 4 functionalities: Initialize, Constructing the banded diffusion matrix operator, boundary conditions, and calculation
+
+ BandedMatrix           | Bin 66256 -> 67128 bytes
+ BandedMatrix.cpp       |  89 +++++++++++++++++++++++++++++++++++--------------
+ Compute_PDE.cpp        |  77 ++++++++++++++++++++++++++++++++++++++++++
+ Compute_PDE.o          | Bin 0 -> 204096 bytes
+ Makefile               |  46 +++++++++++++++++++++++++
+ boundary_condition.cpp |  18 ++++++++++
+ boundary_condition.h   |  24 +++++++++++++
+ boundary_condition.o   | Bin 0 -> 43856 bytes
+ diffusion_matrix.cpp   |  23 +++++++++++++
+ diffusion_matrix.h     |  18 ++++++++++
+ diffusion_matrix.o     | Bin 0 -> 55232 bytes
+ diffusion_solver       | Bin 0 -> 368144 bytes
+ init.cpp               |  44 ++++++++++++++++++++++++
+ init.h                 |  41 +++++++++++++++++++++++
+ init.o                 | Bin 0 -> 144400 bytes
+ matrix_calc.cpp        |  15 +++++++++
+ matrix_calc.h          |  18 ++++++++++
+ matrix_calc.o          | Bin 0 -> 51200 bytes
+ 18 files changed, 388 insertions(+), 25 deletions(-)
+
+commit f9202c8bc710f4c1940dbe331321220ef38595f8
+Author: Patrick GC Deng <patrickgc.deng@mail.utoronto.ca>
+Date:   Mon Mar 3 19:02:41 2025 -0500
+
+     Completed diffusion matrix and boundary conditions.
+    Added function to check for stability of the Explicit Euler Scheme
+
+ BandedMatrix     | Bin 0 -> 66256 bytes
+ BandedMatrix.cpp | 123 ++++++++++++++++++++++++++++++++++++++++++++++---------
+ BandedMatrix.o   | Bin 0 -> 120744 bytes
+ 3 files changed, 104 insertions(+), 19 deletions(-)
+
+commit a6b63e966dd9ddf91818e65753df4c6565ed21e4
+Author: Patrick GC Deng <patrickgc.deng@mail.utoronto.ca>
+Date:   Mon Mar 3 17:54:46 2025 -0500
+
+    Began assignment, constructed the banded diffuscion matrix and applied boundary condition
+
+ BandedMatrix.cpp | 46 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 46 insertions(+)
