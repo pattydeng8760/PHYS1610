@@ -1,0 +1,26 @@
+For assignment 2 of the 2025 Winter PHY1610 course, we will look at a one-dimensional variant of Conway's Game of Life, as conceived by Jonathan K. Millen and published in BYTE magazine in December, 1978.
+
+This system is a linear set of cells that are either "alive" or "dead", and time progresses in discrete steps.
+
+The state of each cell at the next time step depends on its present state and that of its neighbours, in the following way:
+
+First, count the number of alive neighbours at most 2 cells away
+An alive cell stays alive if that count is 2 or 4, else it dies
+A dead cell becomes alive if that count is 2 or 3, else it stays dead.
+Since the first two and the last two cells would not have enough neighbours to apply this rule, we will use cells on the other side as neighbours, i.e., we use 'periodic boundary conditions'.
+
+The initial state of this system will be constructed with a given fraction of alive cells which are (nearly) equally spaced among dead cells.
+
+You are given a code, gameof1d.cpp (see below), that already computes the time evolution of this system, and for each time step, prints out a line with a representation of the state and fraction of alive cells.  It can take parameters from the command line to set the number of cells, the number of time steps, and the initial fraction of alive cells. 
+
+For this assignment, start by studying the code, make sure you understand what's going on. Make sure you can compile and run it; you will need the rarray library for this, which you can get below or at at https://raw.githubusercontent.com/vanzonr/rarray/refs/heads/main/rarray .
+
+Your task is to reorganize ('refactor') this code to be modular.  The aim is to have separate functionalities be implemented in separate functions.
+
+Extract the part of the code that first fills the cell array with dead and alive cells, i.e., put that part of the code in a separate initialization function that then gets called from the main function; make sure the program still produce the same output.
+Make this into a module, i.e., take out that initialization function and put it in a separate .cpp file and create a corresponding header file to be included in the original file.
+Create a Makefile that can build the application.
+Next, repeat these steps to create and use a module for the part of the code that performs a single time step.
+Next, repeat these steps to create a module for the output part of the code.
+Be sure to comment your code..
+You should submit your work to the course website by midnight (ET) January 30th, 2025.  Your submission should consist of all source files, headerfiles, and the Makefile. It is recommended to put them all in a zip file or tar ball (but not rar).

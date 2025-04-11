@@ -1,0 +1,13 @@
+Write a program that can take 2d data sampled at discrete time points and compute a moving average of the norm of the 2d points as a function of time.
+
+The data comes from a file with 3 columns, where the first column is time `t` and the second and third columns `x(t)` and `y(t)` are 2  coordinates.
+The program should compute the norm ($\sqrt{x^{2}+y^{2}}$), and then its moving average over `n` points. I.e. for each array element, it should compute the average of it and the preveeding `n`-1 elements. `n` will be an input parameter.
+Perform this moving average also for the time values.  Write the result in two-column form to a file.    
+The program should take commmand line arguments that correspond to the input file name, the output file name and the width n of the running average.
+Your code should be in a simple `.cpp` file and have three or more functions in addition to the main function, and should be commented. 
+
+Find the assignment and input file on the course website, where you can also upload 
+
+your source file and 
+the result file for the case `n`=5.
+The assignment is due Thursday January 23rd 2025 at midnight.
