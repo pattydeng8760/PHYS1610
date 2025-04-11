@@ -1,0 +1,74 @@
+
+Currently Loaded Modules:
+  1) gentoo/2023 (S)   3) gcccore/.12.3 (H)   5) rarray/2.8.0
+  2) mii/1.1.2         4) gcc/12.3      (t)
+
+  Where:
+   H:  Hidden Module
+   S:  Module is Sticky, requires --force to unload or purge
+   t:  Tools for development / Outils de développement
+
+ 
+
+C++ Modules loaded
+make: Nothing to be done for 'all'.
+Number of threads: 1
+
+==============================Calculating Walker Distribution==============================
+
+  logarithm base (base): 1.25
+  filename (filename): stepnumbers.dat
+
+
+Using 1 threads for compute.
+bin     count
+ 29    33
+ 30    1415
+ 31    10679
+ 32    32619
+ 33    55147
+ 34    66855
+ 35    70234
+ 36    67682
+ 37    63448
+ 38    58759
+ 39    52517
+ 40    47084
+ 41    43081
+ 42    39519
+ 43    36070
+ 44    32736
+ 45    29269
+ 46    27042
+ 47    24714
+ 48    23526
+ 49    21893
+ 50    21283
+ 51    20661
+ 52    19963
+ 53    19271
+ 54    18378
+ 55    16819
+ 56    15436
+ 57    13723
+ 58    11713
+ 59    9499
+ 60    7515
+ 61    5956
+ 62    4624
+ 63    3572
+ 64    2811
+ 65    2238
+ 66    1993
+ 67    223
+
+Timing summary:
+Calculation time:	0.0852201 sec
+Total time:     	0.08528 sec
+
+==============================Walker Distribution Calculation Complete==============================
+
+
+real	0m0.091s
+user	0m0.072s
+sys	0m0.014s
