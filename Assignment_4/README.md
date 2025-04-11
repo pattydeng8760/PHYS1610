@@ -11,13 +11,13 @@ The project consists of:
 ## Physical Model
 The marble's velocity and position evolve according to the following equations:
 
-\[
+$
 v(t) = (v_0 + \frac{g}{\alpha}) e^{-\alpha t} - \frac{g}{\alpha}
-\]
+$
 
-\[
+$
 z(t) = z_0 + \frac{1}{\alpha} (v_0 + \frac{g}{\alpha}) (1 - e^{-\alpha t}) - \frac{g}{\alpha} t
-\]
+$
 
 where:
 - $ z_0 $ is the initial height (m),
@@ -27,9 +27,9 @@ where:
 
 To estimate $ \alpha $, we compute the numerical derivative of the recorded position data to obtain velocity values, then use an averaging method based on acceleration ratios:
 
-\[
+$
 \alpha = \frac{1}{\Delta t} \ln \left[ \frac{1}{n - 2} \sum_{i=1}^{n-2} \frac{v_{i+1} - v_i}{v_{i+2} - v_{i+1}} \right]
-\]
+$
 
 ## Code Structure
 The project consists of the following components:
