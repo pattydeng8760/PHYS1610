@@ -11,9 +11,7 @@ The project consists of:
 ## Physical Model
 The marble's velocity and position evolve according to the following equations:
 
-$
-v(t) = (v_0 + \frac{g}{\alpha}) e^{-\alpha t} - \frac{g}{\alpha}
-$
+$$v(t) = (v_0 + \frac{g}{\alpha}) e^{-\alpha t} - \frac{g}{\alpha}$$
 
 $
 z(t) = z_0 + \frac{1}{\alpha} (v_0 + \frac{g}{\alpha}) (1 - e^{-\alpha t}) - \frac{g}{\alpha} t
