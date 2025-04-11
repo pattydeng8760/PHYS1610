@@ -13,21 +13,21 @@ The marble's velocity and position evolve according to the following equations:
 
 $$v(t) = (v_0 + \frac{g}{\alpha}) e^{-\alpha t} - \frac{g}{\alpha}$$
 
-$
+$$
 z(t) = z_0 + \frac{1}{\alpha} (v_0 + \frac{g}{\alpha}) (1 - e^{-\alpha t}) - \frac{g}{\alpha} t
-$
+$$
 
 where:
-- $ z_0 $ is the initial height (m),
-- $ v_0 $ is the initial velocity (m/s),
-- $ g $ is gravitational acceleration (m/s²),
-- $ \alpha $ is the friction rate (1/s).
+- $$ z_0 $$ is the initial height (m),
+- $$ v_0 $$ is the initial velocity (m/s),
+- $$ g $$ is gravitational acceleration (m/s²),
+- $$ \alpha $$ is the friction rate (1/s).
 
-To estimate $ \alpha $, we compute the numerical derivative of the recorded position data to obtain velocity values, then use an averaging method based on acceleration ratios:
+To estimate $$ \alpha $$, we compute the numerical derivative of the recorded position data to obtain velocity values, then use an averaging method based on acceleration ratios:
 
-$
+$$
 \alpha = \frac{1}{\Delta t} \ln \left[ \frac{1}{n - 2} \sum_{i=1}^{n-2} \frac{v_{i+1} - v_i}{v_{i+2} - v_{i+1}} \right]
-$
+$$
 
 ## Code Structure
 The project consists of the following components:
@@ -52,5 +52,7 @@ Performs numerical differentiation and estimates the friction rate.
 ### **Compiling the Code**
 To compile the project, simply run:
 
+```bash
 make all
 make analysis
+```
