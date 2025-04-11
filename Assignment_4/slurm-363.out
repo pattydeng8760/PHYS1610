@@ -1,0 +1,54 @@
+
+Currently Loaded Modules:
+  1) gentoo/2023 (S)   3) gcccore/.12.3 (H)   5) rarray/2.8.0
+  2) mii/1.1.2         4) gcc/12.3      (t)   6) boost/1.85.0 (t)
+
+  Where:
+   H:  Hidden Module
+   S:  Module is Sticky, requires --force to unload or purge
+   t:  Tools for development / Outils de développement
+
+ 
+
+C++ Modules loaded
+Running simulation 1 of 10
+Output written to 'output--363/testmodel_a0_125_g9_800_z0_120_v5_000_t10_000_d0_010.dat'.
+Output written to 'output--363/analysis_a0_125_g9_800_z0_120_v5_000_t10_000_d0_010.out'.
+Completed analysis for seed 1 with parameters: a=0_125, g=9_800, z=0_120, v=5_000, t=10_000, d=0_010
+Running simulation 2 of 10
+Output written to 'output--363/testmodel_a0_125_g9_800_z0_120_v6_111_t11_111_d0_064.dat'.
+Output written to 'output--363/analysis_a0_125_g9_800_z0_120_v6_111_t11_111_d0_064.out'.
+Completed analysis for seed 2 with parameters: a=0_125, g=9_800, z=0_120, v=6_111, t=11_111, d=0_064
+Running simulation 3 of 10
+Output written to 'output--363/testmodel_a0_125_g9_800_z0_120_v7_222_t12_222_d0_119.dat'.
+Output written to 'output--363/analysis_a0_125_g9_800_z0_120_v7_222_t12_222_d0_119.out'.
+Completed analysis for seed 3 with parameters: a=0_125, g=9_800, z=0_120, v=7_222, t=12_222, d=0_119
+Running simulation 4 of 10
+Output written to 'output--363/testmodel_a0_125_g9_800_z0_120_v8_333_t13_333_d0_173.dat'.
+Output written to 'output--363/analysis_a0_125_g9_800_z0_120_v8_333_t13_333_d0_173.out'.
+Completed analysis for seed 4 with parameters: a=0_125, g=9_800, z=0_120, v=8_333, t=13_333, d=0_173
+Running simulation 5 of 10
+Output written to 'output--363/testmodel_a0_125_g9_800_z0_120_v9_444_t14_444_d0_228.dat'.
+Output written to 'output--363/analysis_a0_125_g9_800_z0_120_v9_444_t14_444_d0_228.out'.
+Completed analysis for seed 5 with parameters: a=0_125, g=9_800, z=0_120, v=9_444, t=14_444, d=0_228
+Running simulation 6 of 10
+Output written to 'output--363/testmodel_a0_125_g9_800_z0_120_v10_556_t15_556_d0_282.dat'.
+Output written to 'output--363/analysis_a0_125_g9_800_z0_120_v10_556_t15_556_d0_282.out'.
+Completed analysis for seed 6 with parameters: a=0_125, g=9_800, z=0_120, v=10_556, t=15_556, d=0_282
+Running simulation 7 of 10
+Output written to 'output--363/testmodel_a0_125_g9_800_z0_120_v11_667_t16_667_d0_337.dat'.
+Output written to 'output--363/analysis_a0_125_g9_800_z0_120_v11_667_t16_667_d0_337.out'.
+Completed analysis for seed 7 with parameters: a=0_125, g=9_800, z=0_120, v=11_667, t=16_667, d=0_337
+Running simulation 8 of 10
+Output written to 'output--363/testmodel_a0_125_g9_800_z0_120_v12_778_t17_778_d0_391.dat'.
+Output written to 'output--363/analysis_a0_125_g9_800_z0_120_v12_778_t17_778_d0_391.out'.
+Completed analysis for seed 8 with parameters: a=0_125, g=9_800, z=0_120, v=12_778, t=17_778, d=0_391
+Running simulation 9 of 10
+Output written to 'output--363/testmodel_a0_125_g9_800_z0_120_v13_889_t18_889_d0_446.dat'.
+Output written to 'output--363/analysis_a0_125_g9_800_z0_120_v13_889_t18_889_d0_446.out'.
+Completed analysis for seed 9 with parameters: a=0_125, g=9_800, z=0_120, v=13_889, t=18_889, d=0_446
+Running simulation 10 of 10
+Output written to 'output--363/testmodel_a0_125_g9_800_z0_120_v15_000_t20_000_d0_500.dat'.
+Output written to 'output--363/analysis_a0_125_g9_800_z0_120_v15_000_t20_000_d0_500.out'.
+Completed analysis for seed 10 with parameters: a=0_125, g=9_800, z=0_120, v=15_000, t=20_000, d=0_500
+All simulations completed. Results stored in output--363/
