@@ -11,4 +11,4 @@ module list
 
 exec="./pkkfisher3d"
 timer="/usr/bin/time"
-"$timer" -f "%es" mpirun -np 120 "$exec" -P 10 -L 15.0 -A 0.2 -N 200 -T 10 -D 0.00125 -F output_mpi_120.dat
+"$timer" -f "%es" mpirun -np 120 "$exec" -P 10 -L 15.0 -A 0.2 -N 200 -T 10 -D 0.000125 -F output_mpi_120.dat

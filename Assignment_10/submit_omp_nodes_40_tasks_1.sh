@@ -20,4 +20,4 @@ echo "Number of OpenMP threads per MPI process: $OMP_NUM_THREADS"
 
 
 # Launch MPI processes
-"$timer" -f "%es" mpirun -np "$SLURM_NTASKS" "$exec" -P 10 -L 15.0 -A 0.2 -N 200 -T 10 -D 0.00125 -F output_omp_${SLURM_NTASKS}nodes_${SLURM_CPUS_PER_TASK}threads.dat
+"$timer" -f "%es" mpirun -np "$SLURM_NTASKS" "$exec" -P 10 -L 15.0 -A 0.2 -N 200 -T 10 -D 0.000125 -F output_omp_${SLURM_NTASKS}nodes_${SLURM_CPUS_PER_TASK}threads.dat

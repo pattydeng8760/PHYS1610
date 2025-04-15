@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --job-name=mpi_hist_parallel
 #SBATCH --nodes=3
-#SBATCH --ntasks-per-node=10
-#SBATCH --cpus-per-task=4
+#SBATCH --ntasks-per-node=8
+#SBATCH --cpus-per-task=5
 #SBATCH --time=00:10:00
-#SBATCH --output=log_mpi_omp_nodes_10_tasks_4_proc.out
+#SBATCH --output=log_mpi_omp_nodes_8_tasks_5_proc.out
 
 # This script is used to submit a job to the SLURM scheduler for running a parallel MPI program without OMP
 module load gcc/12.3 rarray/2.8.0 boost/1.85.0 openmpi/4.1.5

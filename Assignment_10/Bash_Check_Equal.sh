@@ -6,7 +6,7 @@
 FILES=("output_omp_12nodes_10threads.dat" "output_omp_30nodes_4threads.dat" "output_omp_3nodes_40threads.dat" "output_omp_60nodes_2threads.dat" "output_omp_6nodes_20threads.dat" "output_omp_120nodes_1threads.dat")
 
 # Use the first file in the list as the reference
-BASE=("output_mpi_40.dat")
+BASE=("output_mpi_80.dat")
 echo "Using reference file: $BASE"
 
 # Loop over the rest of the files and compare each to the reference file

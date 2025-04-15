@@ -115,36 +115,38 @@ The simulation was run with the following input parameters:
 
 | Configuration             | Timing (s) |
 |---------------------------|------------|
-| 1 node - 40 processes     | 33.2 s     |
-| 2 nodes - 80 processes    | 23.74 s    |
-| 3 nodes - 120 processes   | 20.48 s    |
+| 1 node - 40 processes     | 192.9 s     |
+| 2 nodes - 80 processes    | 111.3 s    |
+| 3 nodes - 120 processes   | 89.19 s    |
 
 ### Hybrid MPI+OpenMP Version Timings (3 Nodes)
 
 | MPI Processes per Node | OpenMP Threads per Process | Total MPI Processes | Timing (s) |
 |------------------------|----------------------------|---------------------|------------|
-| 1                      | 40                         | 3                   | 79.89 s    |
-| 2                      | 20                         | 6                   | 16.64 s    |
-| 4                      | 10                         | 12                  | 15.41 s    |
-| 10                     | 4                          | 30                  | 15.86 s    |
-| 20                     | 2                          | 60                  | 17.19 s    |
-| 40                     | 1                          | 120                 | 21.04 s    |
+| 1                      | 40                         | 3                   | 640.5 s    |
+| 2                      | 20                         | 6                   | 74.28 s    |
+| 4                      | 10                         | 12                  | 59.34 s    |
+| 8                      | 5                          | 24                  | 57.73 s    |
+| 10                     | 4                          | 30                  | 59.82 s    |
+| 20                     | 2                          | 60                  | 71.87 s    |
+| 40                     | 1                          | 120                 | 97.36 s    |
 
 ### Discussion
 
 The pure MPI implementation shows a clear decrease in runtime as the total number of processes increases:
-- With 40 processes on one node, the runtime is 33.2 seconds.
-- With 80 processes on two nodes, the runtime decreases to 23.74 seconds.
-- With 120 processes on three nodes, the runtime further decreases to 20.48 seconds.
+- With 40 processes on one node, the runtime is 192.9 seconds.
+- With 80 processes on two nodes, the runtime decreases to 111.3 seconds.
+- With 120 processes on three nodes, the runtime further decreases to 89.19 seconds. Which is a 2.16x speedup compared to one node
 
 In the hybrid MPI+OpenMP case, running on 3 nodes, the performance varies significantly depending on the balance between MPI processes and OpenMP threads:
 
-- **1 MPI process per node (40 threads each):** The runtime was **79.89 s**, which is considerably slower. This configuration likely suffers from high thread management overhead and suboptimal parallel workload distribution.
-- **2 MPI processes per node (20 threads each):** A runtime of **16.64 s** was observed, showing a significant improvement as the workload is more evenly distributed.
-- **4 MPI processes per node (10 threads each):** The runtime further improves to **15.41 s**, indicating an optimal balance for this particular problem and hardware configuration.
-- **10 MPI processes per node (4 threads each):** With 30 MPI processes in total, the runtime is **15.86 s**; this is comparable to the 4-per-node configuration, though slightly slower.
-- **20 MPI processes per node (2 threads each):** With 60 MPI processes in total, the runtime increases modestly to **17.19 s**, perhaps due to increased communication overhead among a larger number of MPI tasks.
-- **40 MPI processes per node (1 thread each):** This essentially reverts to a pure MPI setup (120 MPI processes total), giving a runtime of **21.04 s**, which is slower than the optimal hybrid configurations but similar to the MPI only configuration. Likly due to overhead associated with the program still needing to initialize the OMP process.
+- **1 MPI process per node (40 threads each):** The runtime was **640.5 s**, which is considerably slower. This configuration likely suffers from high thread management overhead and suboptimal parallel workload distribution.
+- **2 MPI processes per node (20 threads each):** A runtime of **74.28 s** was observed, showing a significant improvement as the workload is more evenly distributed.
+- **4 MPI processes per node (10 threads each):** The runtime further improves to **59.34 s**, considerable speedup compared to the thread dominated workflow
+- **8 MPI processes per node (5 threads each):** The runtime further improves to **57.73 s**, indicating an optimal balance for this particular problem and hardware configuration.
+- **10 MPI processes per node (4 threads each):** With 30 MPI processes in total, the runtime is **59.82 s**; this is comparable to the 4-per-node configuration, though slightly slower.
+- **20 MPI processes per node (2 threads each):** With 60 MPI processes in total, the runtime increases modestly to **71.87 s**, perhaps due to increased communication overhead among a larger number of MPI tasks.
+- **40 MPI processes per node (1 thread each):** This essentially reverts to a pure MPI setup (120 MPI processes total), giving a runtime of **97.36 s**, which is slower than the optimal hybrid configurations but similar to the MPI only configuration. Likly due to overhead associated with the program still needing to initialize the OMP process.
 
 
 ### Optimization Curve
@@ -152,19 +154,19 @@ In the hybrid MPI+OpenMP case, running on 3 nodes, the performance varies signif
 Analyzing the performance of the hybrid MPI+OpenMP runs reveals a classic U-shaped optimization curve when balancing the number of MPI processes against the number of OpenMP threads per process.
 
 - **Excessive Threading (Low MPI, High OpenMP):**  
-  When using a low number of MPI processes with a high number of OpenMP threads per process (e.g., 1 MPI process per node with 40 threads), the runtime was very high (79.89 s). This suggests that the overhead associated with managing a large number of threads—such as thread creation, synchronization, and contention on shared resources—dominates the computation, resulting in poor performance.
+  When using a low number of MPI processes with a high number of OpenMP threads per process (e.g., 1 MPI process per node with 40 threads), the runtime was very high (640.5 s). This suggests that the overhead associated with managing a large number of threads—such as thread creation, synchronization, and contention on shared resources—dominates the computation, resulting in poor performance.
 
 - **Balanced Configuration (Moderate MPI and Threads):**  
-  As the configuration is tuned toward a moderate number of MPI processes and a moderate number of OpenMP threads (for instance, 2 processes per node with 20 threads each or 4 processes per node with 10 threads each), the runtime drops significantly (16.64 s and 15.41 s, respectively). This optimal region is where the computation is efficiently divided between inter-node communication (handled by MPI) and intra-node parallelism (handled by OpenMP), minimizing both communication and threading overhead.
+  As the configuration is tuned toward a moderate number of MPI processes and a moderate number of OpenMP threads (for instance, 2 processes per node with 20 threads each or 4 processes per node with 10 threads each), the runtime drops significantly (59.34 s and 59.82 s, respectively). This optimal region is where the computation is efficiently divided between inter-node communication (handled by MPI) and intra-node parallelism (handled by OpenMP), minimizing both communication and threading overhead. This configuration represents a 3.25x speedup compared to the single node 40 process MPI only case and a 1.50x speedup compared to the MPI only case. 
 
 - **Excessive MPI Processes (High MPI, Low OpenMP):**  
-  Finally, pushing the configuration in the other direction—using many MPI processes per node with fewer threads (40 MPI processes per node with 1 thread each, essentially pure MPI)leads to an increased runtime (21.04 s). Here, while the OpenMP overhead is minimized, the communication overhead among a large number of MPI processes starts to dominate, and the benefits of reduced thread overhead are offset by inefficient domain decomposition and increased inter-process communication.
+  Finally, pushing the configuration in the other direction—using many MPI processes per node with fewer threads (40 MPI processes per node with 1 thread each, essentially pure MPI)leads to an increased runtime (97.36 s). Here, while the OpenMP overhead is minimized, the communication overhead among a large number of MPI processes starts to dominate, and the benefits of reduced thread overhead are offset by inefficient domain decomposition and increased inter-process communication.
 
 ### Interpretation of the Optimization Curve
 
 The overall trend forms a U-shaped curve:
 - **Left Side of the Curve (High Threading Overhead):** Too few MPI processes lead to excessive OpenMP threading within each MPI task. Although the computation itself is parallelized, the overhead of managing 40 threads per process results in a slowdown.
-- **Middle of the Curve (Balanced Approach):** An optimal balance is achieved when the number of MPI processes and the number of OpenMP threads are well-tuned to the underlying hardware. In our experiments, configurations with 4 MPI processes per node (10 threads each) or 10 MPI processes per node (4 threads each) yielded the best performance.
+- **Middle of the Curve (Balanced ):** An optimal balance is achieved when the number of MPI processes and the number of OpenMP threads are well-tuned to the underlying hardware. In this test, configurations with 8 MPI processes per node (5 threads each) yielded the best performance. The optimum is betwee 4-10 MPI processes per node.
 - **Right Side of the Curve (High Communication Overhead):** Too many MPI processes (with correspondingly fewer threads per process) increase the inter-process communication overhead. In our case, pushing to 40 MPI processes per node (essentially pure MPI) resulted in a higher runtime than the optimal hybrid configuration.
 
 - **Optimization Trend:**  
@@ -180,7 +182,7 @@ The overall trend forms a U-shaped curve:
 ## Conclusion
 
 Careful tuning of the hybrid configuration is key to maximizing performance. For this simulation:
-- The optimal configurations were around 4 MPI processes per node (10 threads each) or 10 MPI processes per node (4 threads each).
+- The optimal configurations were around 8 MPI processes per node (5 threads each) or 10 MPI processes per node (4 threads each).
 - These settings provided better performance than both extreme approaches (i.e., too many threads with few MPI processes, or too many MPI processes with few threads).
 
 This analysis underscores the importance of balancing the two levels of parallelism to achieve optimal performance in hybrid MPI+OpenMP applications.

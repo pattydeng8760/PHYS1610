@@ -3,7 +3,7 @@
 #SBATCH --nodes=3
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=40
-#SBATCH --time=00:10:00
+#SBATCH --time=00:15:00
 #SBATCH --output=log_mpi_omp_nodes_1_tasks_40_proc.out
 
 # This script is used to submit a job to the SLURM scheduler for running a parallel MPI program without OMP
@@ -20,4 +20,4 @@ echo "Number of OpenMP threads per MPI process: $OMP_NUM_THREADS"
 
 
 # Launch MPI processes
-"$timer" -f "%es" mpirun -np "$SLURM_NTASKS" "$exec" -P 10 -L 15.0 -A 0.2 -N 200 -T 10 -D 0.00125 -F output_omp_${SLURM_NTASKS}nodes_${SLURM_CPUS_PER_TASK}threads.dat
+"$timer" -f "%es" mpirun -np "$SLURM_NTASKS" "$exec" -P 10 -L 15.0 -A 0.2 -N 200 -T 10 -D 0.000125 -F output_omp_${SLURM_NTASKS}nodes_${SLURM_CPUS_PER_TASK}threads.dat
