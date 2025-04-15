@@ -26,7 +26,7 @@ Through a series of computational physics problems, students explore performance
 | A3 | Testing and Version Control | Git utilization, testing |
 | A4 | Numerics and Cluster Operation | Cluster utilization and benchmarking|
 | A5 | 1-D Partial-Differential Equations (FDM with kpp-fisher equation) | Tensor operations, linear algebra package utilization (BLAS)|
-| A6 | 1-D Partial-Differential Equations (FDM with kpp-fisher equation) | Fast Fourier Transform package utilization (FFTW) |
+| A6 | 1-D Partial-Differential Equations (Spatial Fourier Transform with kpp-fisher equation) | Fast Fourier Transform package utilization (FFTW) |
 | A7 | Percolation Simulation | Random Number Generation RNG Package utilization |
 | A8 | Monte Carlo Simulation | OpenMP programming |
 | A9 | Monte Carlo Simulation  | Message Passing Interface (MPI) Programming |
