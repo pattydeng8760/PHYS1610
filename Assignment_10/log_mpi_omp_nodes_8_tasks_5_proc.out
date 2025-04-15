@@ -13,8 +13,8 @@ Currently Loaded Modules:
 
  
 
-Number of MPI processes: 120
-Number of OpenMP threads per MPI process: 1
+Number of MPI processes: 24
+Number of OpenMP threads per MPI process: 5
 
 ==============================Beginning Calculation==============================
 
@@ -24,7 +24,7 @@ Number of OpenMP threads per MPI process: 1
 #N 200
 #T 10
 #D 0.000125
-#F output_omp_120nodes_1threads.dat
+#F output_omp_24nodes_5threads.dat
 #alpha 0.0220006
 Computation is at time 0
 Computation is at time 1
@@ -38,8 +38,8 @@ Computation is at time 8
 Computation is at time 9
 Computation is at time 10
 
-Total time:     	97.42 sec
+Total time:     	57.11 sec
 
 ==============================Calculation Complete==============================
 
-99.22s
+58.80s

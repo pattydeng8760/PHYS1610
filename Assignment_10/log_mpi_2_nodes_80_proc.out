@@ -21,9 +21,9 @@ Currently Loaded Modules:
 #A 0.2
 #N 200
 #T 10
-#D 0.00125
+#D 0.000125
 #F output_mpi_80.dat
-#alpha 0.220006
+#alpha 0.0220006
 Computation is at time 0
 Computation is at time 1
 Computation is at time 2
@@ -36,8 +36,8 @@ Computation is at time 8
 Computation is at time 9
 Computation is at time 10
 
-Total time:     	23.74 sec
+Total time:     	112.3 sec
 
 ==============================Calculation Complete==============================
 
-25.73s
+114.22s

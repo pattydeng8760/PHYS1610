@@ -23,9 +23,9 @@ Number of OpenMP threads per MPI process: 40
 #A 0.2
 #N 200
 #T 10
-#D 0.00125
+#D 0.000125
 #F output_omp_3nodes_40threads.dat
-#alpha 0.220006
+#alpha 0.0220006
 Computation is at time 0
 Computation is at time 1
 Computation is at time 2
@@ -38,8 +38,8 @@ Computation is at time 8
 Computation is at time 9
 Computation is at time 10
 
-Total time:     	79.89 sec
+Total time:     	641.7 sec
 
 ==============================Calculation Complete==============================
 
-81.48s
+643.19s
