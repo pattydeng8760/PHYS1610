@@ -18,19 +18,19 @@ Through a series of computational physics problems, students explore performance
 
 ## Contents
 
-### 🧮 Assignments
+###  Assignments
 | Assignment | Topic | Features |
 |-----------|-------|----------|
-| A1 | Numerical Integration | Simpson’s Rule, Trapezoidal Rule |
-| A2 | Diffusion Equation | Explicit and Implicit Solvers |
-| A3 | Wave Equation | Stability and Courant Analysis |
-| A4 | Spectral Methods | FFT-based Poisson Solver |
-| A5 | Parallel Histogram | MPI, OpenMP, I/O Performance |
-| A6 | MPI Stencil | Domain Decomposition, Halo Exchange |
-| A7 | OpenMP Mandelbrot | Loop Collapse, Static/Dynamic Scheduling |
-| A8 | Monte Carlo Simulation | Random Walkers, Thread Safety |
-| A9 | Parallel Reduction | MPI_Reduce vs. MPI_Allreduce |
-| A10 | 3D KPP Equation | Hybrid OpenMP + MPI, Performance Benchmarking |
+| A1 | Introduction to C++ | C++ coding and syntax |
+| A2 | Modularization | headerfile and makefile |
+| A3 | Testing and Version Control | Git utilization, testing |
+| A4 | Numerics and Cluster Operation | Cluster utilization and benchmarking|
+| A5 | 1-D Partial-Differential Equations (FDM with kpp-fisher equation) | Tensor operations, linear algebra package utilization (BLAS)|
+| A6 | 1-D Partial-Differential Equations (FDM with kpp-fisher equation) | Fast Fourier Transform package utilization (FFTW) |
+| A7 | Percolation Simulation | Random Number Generation RNG Package utilization |
+| A8 | Monte Carlo Simulation | OpenMP programming |
+| A9 | Monte Carlo Simulation  | Message Passing Interface (MPI) Programming |
+| A10 | 3-D Partial-Differential Equations (FDM with kpp-fisher equation) | Hybrid OpenMP + MPI |
 
 ---
 
@@ -78,7 +78,7 @@ Each assignment folder includes:
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Patrick Deng**  
 PhD Student, Institute for Aerospace Studies
