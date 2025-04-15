@@ -1,0 +1,45 @@
+
+Currently Loaded Modules:
+  1) gentoo/2023   (S)   5) rarray/2.8.0       9) libfabric/1.18.0
+  2) mii/1.1.2           6) boost/1.85.0 (t)  10) pmix/4.2.4
+  3) gcccore/.12.3 (H)   7) hwloc/2.9.1       11) ucc/1.2.0
+  4) gcc/12.3      (t)   8) ucx/1.14.1        12) openmpi/4.1.5    (m)
+
+  Where:
+   H:  Hidden Module
+   S:  Module is Sticky, requires --force to unload or purge
+   m:  MPI implementations / Implémentations MPI
+   t:  Tools for development / Outils de développement
+
+ 
+
+Number of MPI processes: 30
+Number of OpenMP threads per MPI process: 4
+
+==============================Beginning Calculation==============================
+
+#P 10
+#L 15
+#A 0.2
+#N 200
+#T 10
+#D 0.00125
+#F output_omp_30nodes_4threads.dat
+#alpha 0.220006
+Computation is at time 0
+Computation is at time 1
+Computation is at time 2
+Computation is at time 3
+Computation is at time 4
+Computation is at time 5
+Computation is at time 6
+Computation is at time 7
+Computation is at time 8
+Computation is at time 9
+Computation is at time 10
+
+Total time:     	15.86 sec
+
+==============================Calculation Complete==============================
+
+17.69s
